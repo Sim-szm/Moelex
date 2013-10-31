@@ -2,7 +2,7 @@
 # Configuration file for bochsrc setup
 #
 
-# Memory
+# Memory size
 megs: 128
 
 # filename of ROM images
