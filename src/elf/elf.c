@@ -11,6 +11,7 @@
  *
  * =====================================================================================
  */
+#include "moe-common.h"
 #include "elf.h"
 elf_t elf_from_multiboot (multiboot_t *mb){
 	int i;
