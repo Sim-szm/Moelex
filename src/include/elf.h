@@ -28,7 +28,9 @@ typedef struct{
 	uint32_t addralign;
 	uint32_t entsize;
 } __attribute__((packed)) elf_section_header_t;
+
 #define ELF32_ST_TYPE(i) ((i)&0xf)
+
 typedef struct{
 	uint32_t name;
 	uint32_t value;
@@ -37,6 +39,7 @@ typedef struct{
 	uint8_t other;
 	uint16_t shndx;
 } __attribute__((packed)) elf_symbol_t;
+
 typedef struct{
 	elf_symbol_t *symtab;
 	uint32_t symtabsz;
