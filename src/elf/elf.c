@@ -34,8 +34,8 @@ elf_t elf_from_multiboot (multiboot_t *mb){
 	for (i = 0; i < mb->num; i++){
 		const char *name = (const char *) (shstrtab + sh[i].name);
 		if (!strcmp (name, ".strtab")){
-		elf.strtab = (const char *)sh[i].addr;
-		elf.strtabsz = sh[i].size;
+			elf.strtab = (const char *)sh[i].addr;
+			elf.strtabsz = sh[i].size;
 		}
 		if (!strcmp (name, ".symtab")){
 			elf.symtab = (elf_symbol_t*)sh[i].addr;
