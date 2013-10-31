@@ -11,8 +11,21 @@
  *
  * =====================================================================================
  */
-#include "moe-common.h"
 #include "elf.h"
+const char *elf_lookup_symbol(uint32_t addr, elf_t *elf){
+	int i;
+	for (i = 0; i < (elf->symtabsz / sizeof(elf_symbol_t)); i++) {
+		if (ELF32_ST_TYPE(elf->symtab[i].info) != 0x2) {
+		      continue;
+		}
+
+		if ( (addr >= elf->symtab[i].value) 
+			&& (addr < (elf->symtab[i].value + elf->symtab[i].size)) ) {
+			return (const char *)((uint32_t)elf->strtab + elf->symtab[i].name);
+		}
+	}
+	return NULL;
+}
 elf_t elf_from_multiboot (multiboot_t *mb){
 	int i;
 	elf_t elf;
