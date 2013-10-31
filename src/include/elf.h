@@ -15,6 +15,7 @@
 #define _ELF_H
 #include "moe-common.h"
 #include "multiboot.h"
+#include "moe-string.h"
 typedef struct{
 	uint32_t name;
 	uint32_t type;
