@@ -17,5 +17,5 @@ uint32_t pmm_stack_max=PMM_STACK_ADDR; //max location for alloc mempry
 uint32_t pmm_location; // no paging 
 char mm_paging_active=0; //flag for paging manage
 void init_pmm(multiboot *mboot_ptr){
-	//wait , I need t learn ！
+	//wait , I need to learn ！
 }
