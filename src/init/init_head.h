@@ -17,4 +17,7 @@
 #include "moe-timer.h"
 #include "moe-descriptor_tables.h"
 #include "moe-monitor.h"
+#include "elf.h"
+#include "panic.h"
+#include "printk.h"
 #endif

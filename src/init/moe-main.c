@@ -12,6 +12,7 @@
  * =====================================================================================
  */
 #include "init_head.h"
+elf_t kernel_elf;
 int Moe_main(multiboot_t *mboot_ptr){
 	init_descriptor_tables();
 	monitor_clear();
