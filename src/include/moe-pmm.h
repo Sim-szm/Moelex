@@ -13,13 +13,13 @@
  */
 #ifndef _MOE_PMM_H
 #define _MOE_PMM_H
-
+#include "multiboot.h"
 #define PMM_STACK_ADDR 0xFF000000
 #define PMM_MAX_SURPPORT 0x20000000
 void init_pmm(multiboot *mboot_ptr);
 void init_page_pmm(multiboot *mboot_ptr);
 uint32_t pmm_alloc_page();
 void pmm_free_page(uint32_t p);
-
+extern char mm_paging_active ;
 
 #endif
