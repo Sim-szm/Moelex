@@ -1,0 +1,30 @@
+#
+# Configuration file for bochsrc setup
+#
+
+# Memory
+megs: 128
+
+# filename of ROM images
+romimage: file="/home/sim/bochs-2.3.5/bios/BIOS-bochs-latest"
+vgaromimage: file="/home/sim/bochs-2.3.5/bios/VGABIOS-lgpl-latest"
+
+# what disk images will be used 
+floppya: 1_44=floppy.img, status=inserted
+
+#choose the boot disk
+boot: a
+
+# Strat from
+boot: floppy
+
+# Disable Mouse ,Moelex is text only 
+mouse: enabled=0
+
+# Enable key mapping,using US layout as default
+#keyboard_mapping: enabled=1, map="/usr/share/bochs/keymaps/x11-pc-us.map"
+
+# CPU use
+clock: sync=realtime
+cpu: ips=500000
+
