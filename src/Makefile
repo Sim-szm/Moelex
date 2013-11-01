@@ -45,3 +45,6 @@ flush_img:
 .PHONY: start
 start:
 	bochs -f bochsrc.txt
+.PHONY:git
+git:
+	git push -u origin master
