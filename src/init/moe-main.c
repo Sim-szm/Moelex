@@ -19,8 +19,10 @@ int Moe_main(multiboot_t *mboot_ptr){
 	monitor_write("Hello my Moelex kernel !\n");
 	monitor_write("I got your face !\n");
 	//asm volatile("int $0x3");
-	//asm volatile("int $0x4");
+	asm volatile("int $0x4");
 	asm volatile("sti");
+	kernel_elf=elf_from_multiboot(mboot_ptr);
+	panic("Testing trace stack !");
 	init_timer(50);
 	return 0;
 }

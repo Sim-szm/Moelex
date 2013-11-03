@@ -134,7 +134,7 @@ void idt_handler(registers_t *regs){
 		monitor_write("Unhandled interrupt: ");
 		monitor_write_dec(regs->int_no);
 	}
-	monitor_write("recieved interrupt: ");
+	monitor_write("\nrecieved interrupt: ");
 	monitor_write_dec(regs->int_no);
 	monitor_put('\n');
 }

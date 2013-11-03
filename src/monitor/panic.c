@@ -20,7 +20,7 @@ void panic(const char *msg){
 	printk("*** System panic : %s\n",msg);
 	print_stack_trace();
 	printk("*****\n");
-	while(1);
+//	while(1);
 }
 void print_stack_trace(){
 	uint32_t *ebp,*eip;
