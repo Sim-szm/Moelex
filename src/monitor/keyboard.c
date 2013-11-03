@@ -16,8 +16,6 @@
 void keyboard_handler(){          
 	uint8_t scancode = inb(0x60); //read code from buffer ,deal with one chacter from buffer .
 	uint8_t ascii = 0;
-	#define LEFTSHIFT 0x2A
-	#define RIGHTSHIFT 0x36
  	switch (scancode) {//键盘按下和松开都会产生扫描码  
 	  case LEFTSHIFT:  
 	  case RIGHTSHIFT:  

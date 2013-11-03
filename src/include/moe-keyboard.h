@@ -16,6 +16,8 @@
 #include "moe-common.h"
 #include "moe-monitor.h"
 #include "printk.h"
+#define LEFTSHIFT 0x2A
+#define RIGHTSHIFT 0x36
 static uint8_t shift = 0;//here the variable shift is global; typedef unsigned char byte;
 static uint8_t keymap[] = { /* SHIFT OFF */ 
              ' ',' ', '1', '2', '3', '4', '5', '6', '7', '8',  
