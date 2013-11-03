@@ -18,7 +18,7 @@ static uint32_t tick = 0;
 
 static void timer_callback(registers_t regs){
    tick++;
-   //monitor_clear();
+//   monitor_clear();
    monitor_write("Tick: ");
    monitor_write_dec(tick);
    monitor_write("\n");

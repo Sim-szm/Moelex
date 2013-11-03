@@ -23,6 +23,8 @@ int Moe_main(multiboot_t *mboot_ptr){
 	asm volatile("sti");
 	kernel_elf=elf_from_multiboot(mboot_ptr);
 	panic("Testing trace stack !");
+	keyboard_init();
 	init_timer(50);
+        
 	return 0;
 }
