@@ -20,11 +20,14 @@ int Moe_main(multiboot_t *mboot_ptr){
 	monitor_write("I got your face !\n");
 	//asm volatile("int $0x3");
 	asm volatile("int $0x4");
-	asm volatile("sti");
+//	asm volatile("sti");
 	kernel_elf=elf_from_multiboot(mboot_ptr);
 	panic("Testing trace stack !");
+	init_pmm();
+	init_vmm();
+	init_page_pmm(mboot_ptr);
 	keyboard_init();
 	init_timer(50);
-        
+        asm volatile("sti");
 	return 0;
 }

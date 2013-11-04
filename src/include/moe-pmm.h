@@ -15,6 +15,8 @@
 #define _MOE_PMM_H
 #include "multiboot.h"
 #include "moe-common.h"
+#include "panic.h"
+#include "printk.h"
 #define PMM_STACK_ADDR 0xFF000000
 #define PMM_MAX_SURPPORT 0x20000000
 void init_pmm(multiboot_t *mboot_ptr);
