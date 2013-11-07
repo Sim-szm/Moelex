@@ -25,8 +25,19 @@
 #define MULTIBOOT_FLAG_LOADER  0x100
 #define MULTIBOOT_FLAG_APM     0x200
 #define MULTIBOOT_FLAG_VBE     0x400
+
 #define MULTIBOOT_HEADER_MAGIC 0x1BADB002
 #define MULTIBOOT_BOOTLOADER_MAGIC 0x2BADB002
+
+typedef struct{
+	uint32_t size;
+	uint32_t base_addr_low;
+	uint32_t base_addr_high;
+	uint32_t length_low;
+	uint32_t length_high;
+	uint32_t type;
+} __attribute__((packed))mmap_t;
+
 typedef struct{
 	uint32_t flags;
 	uint32_t mem_lower;

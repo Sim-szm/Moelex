@@ -13,7 +13,7 @@
  */
 #include "printk.h"
 #include "memory_manage.h"
-#define MM_MAP
+//#define MM_MAP
 uint32_t pmm_stack_loc=PMM_STACK_ADDR; //start location for alloc memory
 uint32_t pmm_stack_max=PMM_STACK_ADDR; //max location for alloc mempry
 uint32_t pmm_location; // no paging 
