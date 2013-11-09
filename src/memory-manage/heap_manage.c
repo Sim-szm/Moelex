@@ -48,6 +48,9 @@ void *kmalloc(uint32_t l){
 	cur->next=0;
 	cur->allocated=1;
 	cur->length=l;
+	if (prev_header){
+		prev_header->next = cur;
+	}
 	return (void*)(chunk_start+sizeof(header_t));
 }
 void kfree(void *p){
@@ -90,9 +93,11 @@ void glue_chunk(header_t *chunk){
 	}
 }
 void free_chunk(header_t *chunk){
-	chunk->prev->next=0;
 	if(chunk->prev==0)
 	      heap_first=0;
+	else
+	      chunk->prev->next=0;
+
 	while((heap_max-0x1000)>=(uint32_t)chunk){
 		heap_max-=0x1000;
 		uint32_t page;
