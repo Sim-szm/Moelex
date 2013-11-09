@@ -14,7 +14,12 @@
 
 #include "memory_manage.h"
 #include "heap_manage.h"
-
+void split_chunk(header_t *chunk,uint32_t len);
+void alloc_chunk(uint32_t start,uint32_t len);
+void glue_chunk(header_t *chunk);
+void free_chunk(header_t *chunk);
+uint32_t heap_max=HEAP_START;
+header_t *heap_first=0;
 void heap_init(){
 
 }
@@ -34,12 +39,12 @@ void *kmalloc(uint32_t l){
 	if(prev_header)
 	      chunk_start=(uint32_t)prev_header+prev_header->length;
 	else{
-		chunk_start=HEAD_START;
+		chunk_start=HEAP_START;
 		heap_first=(header_t*)chunk_start;
 	}
 	alloc_chunk(chunk_start,l);
 	cur=(header_t*)chunk_start;
-	cur->pre=prev_header;
+	cur->prev=prev_header;
 	cur->next=0;
 	cur->allocated=1;
 	cur->length=l;
@@ -75,7 +80,7 @@ void glue_chunk(header_t *chunk){
 		chunk->next=chunk->next->next;
 	}
 	if(chunk->prev && chunk->prev->allocated==0){
-		chunk->prev->length=chunk->prev->length+chunk-<length;
+		chunk->prev->length=chunk->prev->length+chunk->length;
 		chunk->prev->next=chunk->next;
 		chunk->next->prev=chunk->prev;
 		chunk=chunk->prev;
@@ -93,6 +98,6 @@ void free_chunk(header_t *chunk){
 		uint32_t page;
 		get_mapping(heap_max,&page);
 		pmm_free_page(page);
-		umap(heap_max);
+		unmap(heap_max);
 	}
 }

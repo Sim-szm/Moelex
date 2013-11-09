@@ -20,4 +20,5 @@
 #include "elf.h"
 #include "panic.h"
 #include "printk.h"
+#include "heap_manage.h"
 #endif

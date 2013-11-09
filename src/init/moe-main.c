@@ -26,6 +26,13 @@ int Moe_main(multiboot_t *mboot_ptr){
 	init_pmm();
 	init_vmm();
 	init_page_pmm(mboot_ptr);
+	void *r1=kmalloc(50);
+	printk("r1 :50 bytes in 0x%X\n",r1);
+	void *r2=kmalloc(500);
+	printk("r2 : 50000 bytes in 0x%X\n ",r2);
+	kfree(r1);
+	kfree(r2);
+	monitor_write("keyboard !\n");
 	keyboard_init();
 	init_timer(50);
         asm volatile("sti");

@@ -19,16 +19,10 @@ typedef struct header{
 	struct header *prev,*next;
 	uint32_t allocated:1;
 	uint32_t length:31;
-}header_t
+}header_t;
 /*I will refer to the size of a block being the number of bytes from the start of the
 header to the end of the block - so within a block of size x, there will be x - sizeof(header_t) user-useable bytes.*/
-void split_chunk(header_t *chunk,uint32_t len);
-void alloc_chunk(uint32_t start,uint32_t len);
-void glue_chunk(header_t *chunk);
-void free_chunk(header_t *chunk)
 void init_heap();
 void *kmalloc(uint32_t l);
 void kfree(void *p);
-uint32_t heap_max=HEAP_START;
-header_t *heap_first=0;
 #endif
