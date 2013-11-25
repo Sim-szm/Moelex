@@ -14,6 +14,7 @@
 #include "heap_manage.h"
 #include "kthread.h"
 #include "string.h"
+
 thread_t *init_threading(){
 	thread_t *thread=kmalloc(sizeof(thread_t));
 	thread->id=next_tid++;
