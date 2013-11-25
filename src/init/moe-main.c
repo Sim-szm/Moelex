@@ -32,9 +32,9 @@ int Moe_main(multiboot_t *mboot_ptr){
 	printk("r2 : 50000 bytes in 0x%X\n ",r2);
 	kfree(r1);
 	kfree(r2);
-	monitor_write("keyboard !\n");
+	monitor_write("keyboard interrupt start :\n");
 	keyboard_init();
-	init_timer(50);
+	//init_timer(50);
         asm volatile("sti");
 	return 0;
 }
