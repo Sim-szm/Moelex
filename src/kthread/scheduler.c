@@ -34,8 +34,8 @@ void init_scheduler(thread_t *initial_thread){
 }
 void thread_is_ready(thread_t *t){
 	thread_list_t *item=(thread_list_t*)kmalloc(sizeof(thread_list_t*));
-	item->thread=t;
 	item->next=0;
+	item->thread=t;
 	if(!ready_queue)
 	      ready_queue=item;
 	else{
