@@ -29,8 +29,8 @@ thread_t *create_thread(int(*fn)(void*),void*arg,uint32_t *stack){
 	*--stack=(uint32_t)&thread_exit;
 	*--stack=(uint32_t)fn;
 	*--stack=0;
-	thread->ebp=(uint32_t)stack;
-	thread->esp=(uint32_t)stack;
+	thread->ebp = (uint32_t)stack;
+	thread->esp = (uint32_t)stack;
 	return thread;
 }
 void switch_thread_work(thread_t *next){
