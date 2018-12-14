@@ -6,8 +6,8 @@
 megs: 128
 
 # filename of ROM images
-romimage: file="/home/sim/bochs-2.3.5/bios/BIOS-bochs-latest"
-vgaromimage: file="/home/sim/bochs-2.3.5/bios/VGABIOS-lgpl-latest"
+romimage: file="/home/zomoe/zomoe/bochs/bochs-2.6.9/bios/BIOS-bochs-latest"
+vgaromimage: file="/home/zomoe/zomoe/bochs/bochs-2.6.9/bios/VGABIOS-lgpl-latest"
 
 # what disk images will be used 
 floppya: 1_44=floppy.img, status=inserted
@@ -26,5 +26,5 @@ mouse: enabled=0
 
 # CPU use
 clock: sync=realtime
-cpu: ips=500000
+cpu: ips=5000000
 

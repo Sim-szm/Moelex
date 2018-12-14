@@ -11,7 +11,7 @@
  *
  * =====================================================================================
  */
-#include "moe-string.h"
+#include "moe_string.h"
 inline void *memcpy(uint8_t *s1, const uint8_t *s2, uint32_t n){
 	for (; n != 0; n--) {
 		*s1++ = *s2++;

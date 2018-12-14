@@ -11,8 +11,8 @@
  *
  * =====================================================================================
  */
-#include "moe-descriptor_tables.h"
-#include "moe-keyboard.h"
+#include "moe_descriptor_tables.h"
+#include "moe_keyboard.h"
 void keyboard_handler(){          
 	uint8_t scancode = inb(0x60); //read code from buffer ,deal with one chacter from buffer .
 	uint8_t ascii = 0;

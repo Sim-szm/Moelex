@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  moe-pmm.h
+ *       Filename:  moe_pmm.h
  *        Version:  1.0
  *        Created:  2013年10月30日 21时24分15秒
  *       Revision:  none
@@ -14,7 +14,7 @@
 #ifndef _MOE_PMM_H
 #define _MOE_PMM_H
 #include "multiboot.h"
-#include "moe-common.h"
+#include "moe_common.h"
 #include "panic.h"
 #include "printk.h"
 #define PMM_STACK_ADDR 0xFF000000

@@ -13,8 +13,8 @@
  */
 #ifndef _MEMORY_MANAGE_H
 #define _MEMORY_MANAGE_H
-#include "moe-pmm.h"
-#include "moe-descriptor_tables.h"
+#include "moe_pmm.h"
+#include "moe_descriptor_tables.h"
 /* To make our code more readable we also define some labels. As you remember, bit 1 stands for present, bit 2 for writeable and bit 3 for user     	accessible */
 #define PAGE_PRESENT 0x1
 #define PAGE_WRITE 0x2

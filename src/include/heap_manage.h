@@ -15,6 +15,7 @@
 #define _HEAP_MANAGE_H
 #define HEAP_START 0xD0000000
 #define HEAP_END 0xFF000000
+#include "moe_common.h"
 typedef struct header{
 	struct header *prev,*next;
 	uint32_t allocated:1;

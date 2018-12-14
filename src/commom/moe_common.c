@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  moe-common.c
+ *       Filename:  moe_common.c
  *        Version:  1.0
  *        Created:  2013年10月22日 19时31分38秒
  *       Revision:  none
@@ -11,7 +11,7 @@
  *
  * =====================================================================================
  */
-#include "moe-common.h"
+#include "moe_common.h"
 void outb(uint16_t port, uint8_t value)
 {
     asm volatile ("outb %1, %0" : : "dN" (port), "a" (value));

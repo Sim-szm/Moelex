@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  moe-common.h
+ *       Filename:  moe_common.h
  *        Version:  1.0
  *        Created:  2013年10月22日 19时23分21秒
  *       Revision:  none

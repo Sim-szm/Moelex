@@ -14,8 +14,8 @@ CC = gcc
 LD = ld
 ASM = nasm
 
-C_FLAGS = -c -Wall -nostdlib -nostdinc -fno-builtin -fno-stack-protector -I include -m32
-LD_FLAGS = -T scripts/link.ld -melf_i386
+C_FLAGS = -c -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -march=i386 -I include 
+LD_FLAGS = -T scripts/link.ld -m elf_i386
 ASM_FLAGS = -f elf
 
 all: $(S_OBJECTS) $(C_OBJECTS) link

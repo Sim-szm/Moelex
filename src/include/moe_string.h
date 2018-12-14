@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  moe-string.h
+ *       Filename:  moe_string.h
  *        Version:  1.0
  *        Created:  2013年10月28日 20时15分42秒
  *       Revision:  none
@@ -13,7 +13,7 @@
  */
 #ifndef _STRING_H
 #define _STRING_H
-#include "moe-common.h"
+#include "moe_common.h"
 #ifndef NULL  
 #ifdef __cplusplus  
 #define NULL    0  

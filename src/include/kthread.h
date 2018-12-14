@@ -13,6 +13,7 @@
  */
 #ifndef KTHREAD_H
 #define KTHREAD_H
+#include "moe_common.h"
 typedef struct{
 	uint32_t id;
 	uint32_t ebp;
@@ -21,7 +22,6 @@ typedef struct{
 	uint32_t edi;
 	uint32_t esi;
 }thread_t;
-
 thread_t *init_threading();
 thread_t *create_thread(int (*fn)(void*),void*arg,uint32_t *stack);
 void switch_thread_work(thread_t *next);

@@ -49,10 +49,10 @@ mboot:
   dd  start                     ; Kernel entry point (initial EIP).
 
 [GLOBAL start]                  ; Kernel entry point.
-[EXTERN Moe_main]               ; This is the entry point of our C code
+[EXTERN moelex_main]               ; This is the entry point of our C code
 
 start:
   push    ebx                   ; Load multiboot header location ,Execute For the Moelex kernel 
   cli                           ; Disable interrupts, and then start out kernel.
-  call Moe_main                 ; call our Moe_main() function ,as the C language main().
+  call moelex_main                 ; call our moelex_main() function ,as the C language main().
   jmp $                         ; it should be shutdown , and now write as a big loop !

@@ -11,8 +11,8 @@
  *
  * =====================================================================================
  */
-#include "moe-descriptor_tables.h"
-#include "moe-string.h"
+#include "moe_descriptor_tables.h"
+#include "moe_string.h"
 extern void gdt_flush(uint32_t);
 static void init_gdt();
 static void gdt_set_gate(int32_t,uint32_t,uint32_t,uint8_t,uint8_t);

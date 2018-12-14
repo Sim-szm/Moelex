@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  monitor.c
+ *       Filename:  moe_monitor.c
  *        Version:  1.0
  *        Created:  2013年10月22日 18时58分40秒
  *       Revision:  none
@@ -12,7 +12,7 @@
  * =====================================================================================
  */
 
-#include "moe-monitor.h"
+#include "moe_monitor.h"
 uint8_t cursor_x =0;
 uint8_t cursor_y =0;
 uint16_t *video_memory=(uint16_t*)0xB8000;

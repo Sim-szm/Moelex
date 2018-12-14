@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  moe-keyboard.h
+ *       Filename:  moe_keyboard.h
  *        Version:  1.0
  *        Created:  2013年11月03日 17时01分24秒
  *       Revision:  none
@@ -13,8 +13,8 @@
  */
 #ifndef _MOE_COMMON_H_
 #define _MOE_COMMON_H_
-#include "moe-common.h"
-#include "moe-monitor.h"
+#include "moe_common.h"
+#include "moe_monitor.h"
 #include "printk.h"
 #define LEFTSHIFT 0x2A
 #define RIGHTSHIFT 0x36

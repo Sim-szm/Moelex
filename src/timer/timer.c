@@ -11,9 +11,9 @@
  *
  * =====================================================================================
  */
-#include "moe-timer.h"
-#include "moe-descriptor_tables.h"
-#include "moe-monitor.h"
+#include "moe_timer.h"
+#include "moe_descriptor_tables.h"
+#include "moe_monitor.h"
 static uint32_t tick = 0;
 
 static void timer_callback(registers_t regs){

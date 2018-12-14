@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  moe-timer.h
+ *       Filename:  moe_timer.h
  *        Version:  1.0
  *        Created:  2013年10月28日 20时57分54秒
  *       Revision:  none
@@ -13,6 +13,6 @@
  */
 #ifndef _MOE_TIMER_H
 #define _MOE_TIMER_H
-#include "moe-common.h"
+#include "moe_common.h"
 void init_timer(uint32_t frequency);
 #endif

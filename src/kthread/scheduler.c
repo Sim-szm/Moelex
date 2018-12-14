@@ -11,9 +11,12 @@
  *
  * =====================================================================================
  */
+#include "moe_common.h"
 #include "heap_manage.h"
 #include "kthread.h"
 #include "scheduler.h"
+
+thread_list_t *current_thread;
 void scheduler(){
 	if(!ready_queue)
 	      return ;

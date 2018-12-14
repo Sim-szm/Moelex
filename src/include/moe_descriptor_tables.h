@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  moe-descripter_tables.h
+ *       Filename:  moe_descripter_tables.h
  *        Version:  1.0
  *        Created:  2013年10月28日 14时16分19秒
  *       Revision:  none
@@ -13,9 +13,9 @@
  */
 #ifndef _DESCRIPTOR_TABLES_H
 #define _DESCRIPTOR_TABLES_H
-#include "moe-common.h"
-#include "moe-monitor.h"
-#include "moe-string.h"
+#include "moe_common.h"
+#include "moe_monitor.h"
+#include "moe_string.h"
 struct gdt_entry_struct{
    uint16_t limit_low;           // The lower 16 bits of the limit.
    uint16_t base_low;            // The lower 16 bits of the base.

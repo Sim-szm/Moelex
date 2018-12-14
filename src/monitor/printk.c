@@ -12,7 +12,7 @@
  * =====================================================================================
  */
 #include "printk.h"
-#include "moe-monitor.h"
+#include "moe_monitor.h"
 
 #define is_digit(c) ((c)>='0' && (c)<='9')  //we use this so that we can do without the ctype library
 

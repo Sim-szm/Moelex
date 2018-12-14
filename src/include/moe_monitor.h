@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  moe-monitor.h
+ *       Filename:  moe_monitor.h
  *        Version:  1.0
  *        Created:  2013年10月22日 19时33分43秒
  *       Revision:  none
@@ -13,7 +13,7 @@
  */
 #ifndef MOE_MONITOR_H
 #define MOE_MONITOR_H
-#include "moe-common.h"
+#include "moe_common.h"
 void monitor_put(char c);
 void monitor_clear();
 void monitor_write(char *c);

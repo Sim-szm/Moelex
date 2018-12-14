@@ -13,8 +13,11 @@
  */
 #include "heap_manage.h"
 #include "kthread.h"
-#include "string.h"
+#include "moe_string.h"
 
+thread_t *current_thread;
+uint32_t next_tid = 0;
+uint32_t thread_exit=0;
 thread_t *init_threading(){
 	thread_t *thread=kmalloc(sizeof(thread_t));
 	thread->id=next_tid++;
@@ -24,7 +27,7 @@ thread_t *init_threading(){
 thread_t *create_thread(int(*fn)(void*),void*arg,uint32_t *stack){
 	thread_t *thread=kmalloc(sizeof(thread_t));
 	memset(thread,0,sizeof(thread_t));
-	thread_t->id=next_tid++;
+	thread->id=next_tid++;
 	*--stack=(uint32_t)arg;
 	*--stack=(uint32_t)&thread_exit;
 	*--stack=(uint32_t)fn;
@@ -34,15 +37,15 @@ thread_t *create_thread(int(*fn)(void*),void*arg,uint32_t *stack){
 	return thread;
 }
 void switch_thread_work(thread_t *next){
-	asm volatile("mov %%esp ,%0":"=r" (current_thread->esp));
-	asm volatile("mov %%ebp ,%0":"=r" (current_thread->ebp));
-	asm volatile("mov %%ebx ,%0":"=r" (current_thread->ebx));
-	asm volatile("mov %%esi ,%0":"=r" (current_thread->esi));
-	asm volatile("mov %%edi ,%0":"=r" (current_thread->edi));
+	__asm__ __volatile__("mov %%esp ,%0":"=r" (current_thread->esp));
+	__asm__ __volatile__("mov %%ebp ,%0":"=r" (current_thread->ebp));
+	__asm__ __volatile__("mov %%ebx ,%0":"=r" (current_thread->ebx));
+	__asm__ __volatile__("mov %%esi ,%0":"=r" (current_thread->esi));
+	__asm__ __volatile__("mov %%edi ,%0":"=r" (current_thread->edi));
 	current_thread=next;
-	asm volatile("mov %%edi ,%0":"=r" (current_thread->edi));
-	asm volatile("mov %%esi ,%0":"=r" (current_thread->esi));
-	asm volatile("mov %%ebx ,%0":"=r" (current_thread->ebx));
-	asm volatile("mov %%esp ,%0":"=r" (current_thread->esp));
-	asm volatile("mov %%ebp ,%0":"=r" (current_thread->ebp));
+	__asm__ __volatile__("mov %%edi ,%0":"=r" (current_thread->edi));
+	__asm__ __volatile__("mov %%esi ,%0":"=r" (current_thread->esi));
+	__asm__ __volatile__("mov %%ebx ,%0":"=r" (current_thread->ebx));
+	__asm__ __volatile__("mov %%esp ,%0":"=r" (current_thread->esp));
+	__asm__ __volatile__("mov %%ebp ,%0":"=r" (current_thread->ebp));
 }

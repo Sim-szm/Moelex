@@ -13,7 +13,7 @@
  */
 #ifndef INCLUDE_MULTIBOOT_H_
 #define INCLUDE_MULTIBOOT_H_
-#include "moe-common.h"
+#include "moe_common.h"
 #define MULTIBOOT_FLAG_MEM     0x001
 #define MULTIBOOT_FLAG_DEVICE  0x002
 #define MULTIBOOT_FLAG_CMDLINE 0x004

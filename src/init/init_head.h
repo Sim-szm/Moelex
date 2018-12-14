@@ -14,11 +14,14 @@
 #ifndef _INIT_HEAD_H
 #define _INIT_HEAD_H
 #include "multiboot.h"
-#include "moe-timer.h"
-#include "moe-descriptor_tables.h"
-#include "moe-monitor.h"
+#include "moe_timer.h"
+#include "moe_descriptor_tables.h"
+#include "moe_monitor.h"
+#include "moe_keyboard.h"
 #include "elf.h"
 #include "panic.h"
 #include "printk.h"
 #include "heap_manage.h"
+#include "scheduler.h"
+#include "kthread.h"
 #endif

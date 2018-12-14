@@ -11,7 +11,7 @@
  *
  * =====================================================================================
  */
-#include "moe-common.h"
+#include "moe_common.h"
 #include "panic.h"
 #include "elf.h"
 static void print_stack_trace();

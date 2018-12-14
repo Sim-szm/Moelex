@@ -18,6 +18,7 @@ typedef struct thread_list{
 	thread_t *thread;
 	struct thread_list *next;
 }thread_list_t;
+thread_list_t *ready_queue;
 void init_scheduler(thread_t *initial_thread);
 void thread_is_ready(thread_t * t);
 void thread_not_ready(thread_t *t);
