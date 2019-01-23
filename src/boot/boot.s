@@ -6,7 +6,6 @@
 MBOOT_HEADER_MAGIC 	equ 	0x1BADB002 	; Multiboot magic_num ,defined with the rules
 MBOOT_PAGE_ALIGN 	equ 	1 << 0    	  ; Load kernel and modules on a page boundary
 MBOOT_MEM_INFO 		equ 	1 << 1    	  ; Provide your kernel with memory info
-MBOOT_AOUT_KLUDGE 	equ 	1 << 16     ; NOTE: We do not use MBOOT_AOUT_KLUDGE. It means that GRUB does not pass us a symbol table.
 MBOOT_HEADER_FLAGS 	equ 	MBOOT_PAGE_ALIGN | MBOOT_MEM_INFO
 MBOOT_CHECKSUM 		equ 	- (MBOOT_HEADER_MAGIC + MBOOT_HEADER_FLAGS)
 
@@ -34,7 +33,8 @@ MBOOT_CHECKSUM 		equ 	- (MBOOT_HEADER_MAGIC + MBOOT_HEADER_FLAGS)
 ; 36  u32  width     
 ; 40  u32  height    
 ; 44  u32  depth    
-; Not include all , pleasr reference to the documnets !
+; Not include all , pleasr reference to the documnets:
+;     <the multiboot specification version 0.6.96>
 ;-----------------------------------------------------------
 
 

@@ -48,7 +48,7 @@ static void idt_set_gate (uint8_t num, uint32_t base, uint16_t sel, uint8_t flag
 static void init_gdt(){
 	gdt_ptr.limit=(sizeof(gdt_entry_t)*5)-1;
 	gdt_ptr.base=(uint32_t)&gdt_entries;
-	gdt_set_gate(0,0,0,0,0);//null segment,according to Intel documents,the first descriptor must be zero for all !
+	gdt_set_gate(0,0,0,0,0);//according to Intel documents,the first descriptor must be zero for all !
 	gdt_set_gate(1,0,0xFFFFFFFF,0x9A,0xCF);//code segment
 	gdt_set_gate(2,0,0xFFFFFFFF,0x92,0xCF);//date segment
 	gdt_set_gate(3,0,0xFFFFFFFF,0xFA,0xCF);//user mode code segment
@@ -69,7 +69,7 @@ void init_idt (){
 	outb(0x21, 0x0);
 	outb(0xA1, 0x0);
 	memset ((uint8_t*)&interrupt_handlers, 0, sizeof(interrupt_handler_t) * 256);
-	idt_ptr.limit = sizeof(idt_entry_t) * 256 - 1;
+	idt_ptr.limit = sizeof(idt_entry_t) * 257 - 1;
 	idt_ptr.base  = (uint32_t)&idt_entries;
 	memset ((uint8_t*)&idt_entries, 0, sizeof(idt_entry_t) * 255);
 	// 0-32:  用于 CPU 的中断处理

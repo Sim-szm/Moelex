@@ -1,8 +1,8 @@
 #
 #	---------------------------------------------------------------------
 # 	Makefile for the Moelex kernel 
-# 	we use GCC as the default compiler  
-# 	we compile assembly code with nasm ,and link with ld
+# 	use GCC as the default compiler  
+# 	compile assembly code with nasm ,and link with ld
 #	---------------------------------------------------------------------
 #
 C_SOURCES = $(shell find . -name "*.c")

@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  moe_main.c
+ *       Filename:  moelex_main.c
  *        Version:  1.0
  *        Created:  2013年10月22日 20时20分55秒
  *       Revision:  none
@@ -13,30 +13,38 @@
  */
 #include "init_head.h"
 elf_t kernel_elf;
+int flag = 0;
 int moelex_main(multiboot_t *mboot_ptr){
 	init_descriptor_tables();
 	monitor_clear();
 	monitor_write("Start Moelex kernel !\n");
 	monitor_write("Welcome to Moelex !\n");
 	//asm volatile("int $0x3");
-	asm volatile("int $0x4");
-//	asm volatile("sti");
+	__asm__ __volatile__("int $0x4");
+//	__asm__ __volatile__("sti");
 	kernel_elf=elf_from_multiboot(mboot_ptr);
-	panic("Testing trace stack !");
-	init_pmm();
+	panic("testing trace stack !");
+	init_timer(200);
+	init_pmm(mboot_ptr); 
 	init_vmm();
 	init_page_pmm(mboot_ptr);
-	monitor_write("malloc for data :\n");
-	void *r1=kmalloc(50);
-	printk("r1 :50 bytes in 0x%X\n",r1);
-	void *r2=kmalloc(500);
-	printk("r2 : 50000 bytes in 0x%X\n ",r2);
-	kfree(r1);
-	kfree(r2);
-	//monitor_write("keyboard interrupt start :\n");
+	monitor_write("malloc data space :\n");
+	void *address_1=kmalloc(50);
+	printk("address_1 :50 bytes in 0x%X\n",address_1);
+	void *address_2=kmalloc(500);
+	printk("address_2 : 500 bytes in 0x%X\n ",address_2);
+	//free mem
+	printk("free mem in 0x%X\n",address_1);
+	kfree(address_1);
+	printk("free mem in 0x%X\n",address_2);
+	kfree(address_2);
+	monitor_write("keyboard interrupt start :\n");
 	keyboard_init();
-	init_timer(50);
-	monitor_write("print charater A and B with two thread :\n");
+	//monitor_write(" timer trigger interrupts with kthread:\n");
+	//init_scheduler(init_threading());
+	//scheduler();
+//	while(1){
         __asm__ __volatile__("sti");
+//	}
 	return 0;
 }

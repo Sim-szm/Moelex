@@ -24,7 +24,7 @@ void panic(const char *msg){
 }
 void print_stack_trace(){
 	uint32_t *ebp,*eip;
-	asm volatile ("mov %%ebp,%0":"=r"(ebp));
+	__asm__ __volatile__("mov %%ebp,%0":"=r"(ebp));
 	while(ebp){
 		eip=ebp+1;
 		printk("[0x%x] %s\n",*eip,elf_lookup_symbol(*eip,&kernel_elf));

@@ -16,10 +16,15 @@
 #include "kthread.h"
 #include "scheduler.h"
 
-thread_list_t *current_thread;
+thread_list_t *ready_queue = 0;
+thread_list_t *current_thread = 0;
+
+
 void scheduler(){
-	if(!ready_queue)
+	if(!ready_queue){
+	      printk("stop-thread");
 	      return ;
+	}
 	thread_list_t *iterator=ready_queue;
 	while(iterator->next){
 		iterator=iterator->next;
@@ -32,8 +37,8 @@ void scheduler(){
 void init_scheduler(thread_t *initial_thread){
 	current_thread=(thread_list_t*)kmalloc(sizeof(thread_list_t*));
 	current_thread->thread=initial_thread;
-	current_thread->next=0;
-	ready_queue=0;
+	current_thread->next=current_thread;
+	ready_queue=current_thread;
 }
 void thread_is_ready(thread_t *t){
 	thread_list_t *item=(thread_list_t*)kmalloc(sizeof(thread_list_t*));

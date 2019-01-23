@@ -20,6 +20,8 @@
 #include "moe_keyboard.h"
 #include "elf.h"
 #include "panic.h"
+#include "moe_pmm.h"
+#include "moe_vmm.h"
 #include "printk.h"
 #include "heap_manage.h"
 #include "scheduler.h"

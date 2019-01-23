@@ -3,7 +3,7 @@
 #
 
 # Memory size
-megs: 128
+megs: 32
 
 # filename of ROM images
 romimage: file="/home/zomoe/zomoe/bochs/bochs-2.6.9/bios/BIOS-bochs-latest"

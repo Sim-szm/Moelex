@@ -14,14 +14,13 @@
 #include "moe_timer.h"
 #include "moe_descriptor_tables.h"
 #include "moe_monitor.h"
+#include "kthread.h"
+#include "scheduler.h"
 static uint32_t tick = 0;
 
 static void timer_callback(registers_t regs){
-   tick++;
 //   monitor_clear();
-   monitor_write("Tick: ");
-   monitor_write_dec(tick);
-   monitor_write("\n");
+   scheduler();
 }
 void init_timer(uint32_t frequency){
    // Firstly, register our timer callback.
@@ -33,6 +32,10 @@ void init_timer(uint32_t frequency){
    uint32_t divisor = 1193180 / frequency;
 
    // Send the command byte.
+   // D7 D6 D5 D4 D3 D2 D1 D0
+   // 0  0  1  1  0  1  1  0
+   // it is 36H
+   // set 8254 runing in mode 3
    outb(0x43, 0x36);
 
    // Divisor has to be sent byte-wise, so split here into upper/lower bytes.
